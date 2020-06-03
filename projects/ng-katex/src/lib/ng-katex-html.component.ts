@@ -16,7 +16,7 @@ export class KatexHtmlComponent {
     let segments = this.segments;
     var allHtml = segments.map((seg) => {
       if (seg.math) {
-        return this.katexService.renderToString(seg.raw, { displayMode: seg.type === 'display' });
+        return this.katexService.renderToString(seg.raw, { displayMode: seg.type === 'display', throwOnError: false });
       }
       else {
         return seg.value;
